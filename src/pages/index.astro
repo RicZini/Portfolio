@@ -27,40 +27,107 @@ const websiteSchema = {
   description: SITE.description,
   url: new URL(withBase('/'), site).href,
 };
+//
+// Calcolo dell'età
+//
+const birthDate = new Date(2003, 0, 27); // Data di nascita: 27 gennaio 2003
+const today = new Date();
+
+let age = today.getFullYear() - birthDate.getFullYear();
+const monthDiff = today.getMonth() - birthDate.getMonth();
+
+if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+  age--;
+}
 ---
+
 
 <BaseLayout description={SITE.description}>
   <StructuredData slot="head" schema={websiteSchema} />
   <section class="hero section">
-    <p class="eyebrow">Portfolio / writing / systems notes</p>
-    <h1>Structural minimalism for careful digital work.</h1>
+    <p class="eyebrow">Introduction</p>
+    <h1>From Silicon to Code. Engineered for performance.</h1>
     <p class="lead">
-      Astro Keel gives projects, essays, and professional notes a disciplined frame: editorial type,
-      measured rhythm, and a single accent carried through fine structural rules.
+      MSc Electronic Engineering student with a solid background spanning analog electronics, RF/MW circuits, IC design and digital architectures.<br>
+      Backed by extensive hands-on experience in Formula Student, bridging complex theoretical models with high-performance, real-world execution.
     </p>
     <div class="action-row" aria-label={t('home.primaryLinks')}>
       <a class="button" href={withBase('/works/')}>{t('home.viewWorks')}</a>
-      <a class="text-link" href={withBase('/blog/')}>{t('home.readNotes')}</a>
+      <a class="text-link" href={withBase('/CV_Zini_Riccardo.pdf')} target="_blank">My CV</a>
+    </div>
+  </section>
+
+  <section class="section prose-grid">
+    <div>
+      <p class="eyebrow">Who am I?</p>
+      <h2>The life of a engineer.</h2>
+    </div>
+    <div class="prose-stack">
+      <p>
+        I am a {age} year old engineer based in <strong>Veneto, Italy</strong>. When I am not designing circuits, you will probably 
+        find me weightlifting, playing basketball, baking traditional Italian desserts, or reading sci-fi and thrillers.
+      </p>
+      <p>
+        My academic journey started in <strong>Automation Engineering</strong>. However, halfway through my BSc, 
+        I realized my true passion wasn't just controlling abstract systems, it was designing the physical
+        electronics and hardware that powers them. 
+        This realization drove my pivot to an MSc in <strong>Electronic Engineering</strong>, where I delved deep into analog and
+        mixed-signal electronics as well as RF/MW circuits and IC design.
+      </p>
+      <p>
+        The most formative chapter of my career has been <strong>UniBo Motorsport</strong>. What began as a deep dive into 
+        technical implementation evolved into my role as Technical Lead. Managing a department of 12 engineers 
+        taught me how to align complex goals with strict deadlines and bridge the gap between theoretical models 
+        and race-ready hardware. Today, I continue to support the team as an <strong>alumno</strong>, mentoring the next
+        generation of engineers on system architecture, PCB and Powertrain design, and ECU development.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" aria-label={t('about.ledgerLabel')}>
+    <div class="about-ledger">
+      <article>
+        <span>01</span>
+        <h3 style="white-space: nowrap;">Relentless curiosity</h3>
+        <p>Not afraid of non-linear paths. I pivoted toward electronics out of genuine curiosity, 
+          constantly pushing my boundaries and choosing the challenging route to build real expertise.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3 style="white-space: nowrap;">Research Focus</h3>
+        <p>
+          Backed by strong academic foundations in analog, digital, and RF electronics. 
+          I leverage first-principles theory to tackle complex research and development problems systematically.
+        </p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3 style="white-space: nowrap;">End-to-End Implementation</h3>
+        <p>
+          Turning concepts into physical reality using industry-standard tools, spanning Cadence Virtuoso for IC layout, 
+          Altium Designer for multi-layer PCBs, and Keysight Advanced Design Software for RF/MW circuit design.
+        </p>
+      </article>
     </div>
   </section>
 
   <section class="section split-overview" aria-label={t('home.overviewLabel')}>
     <div>
-      <p class="eyebrow">Principles</p>
-      <h2>Readable first, decorative last.</h2>
+      <p class="eyebrow">Background</p>
+      <h2>My titles and experiences.</h2>
     </div>
     <div class="feature-list">
       <article>
-        <h3>Baseline rhythm</h3>
-        <p>Vertical spacing follows a steady cadence for long-form reading.</p>
+        <h3 style="white-space: nowrap;">BSc in Automation Engineering</h3>
+        <p>Focus on control systems and electronic implementations. Thesis on a Formula Student control algorithm.</p>
       </article>
       <article>
-        <h3>Typed content</h3>
-        <p>Collections are prepared for project case studies and durable notes.</p>
+        <h3 style="white-space: nowrap;">MSc in Electronic Engineering</h3>
+        <p>Specialized in analog and mixed-signal electronics, RF/MW circuits and IC design.</p>
       </article>
       <article>
-        <h3>Keel lines</h3>
-        <p>Fine rules create structure without relying on decorative effects.</p>
+        <h3 style="white-space: nowrap;">Formula Student - UniBo Motorsport</h3>
+        <p>Led the Control Systems department, managing ECU development, Powertrain integration and PCB design.</p>
       </article>
     </div>
   </section>
@@ -100,39 +167,6 @@ const websiteSchema = {
       ) : (
         <div class="empty-state compact">
           <p set:html={t('home.worksEmpty')} />
-        </div>
-      )
-    }
-  </section>
-
-  <section class="section index-feed" aria-labelledby="latest-notes">
-    <div class="section-heading">
-      <p class="eyebrow">{t('home.latestBlogEyebrow')}</p>
-      <h2 id="latest-notes">Field notes.</h2>
-      <a class="text-link" href={withBase('/blog/')}>{t('home.allPosts')}</a>
-    </div>
-
-    {
-      posts.length > 0 ? (
-        <div class="note-list">
-          {posts.map((post) => (
-            <article class="note-row">
-              {post.data.heroImage && (
-                <Image src={post.data.heroImage} alt="" width={320} height={220} loading="lazy" />
-              )}
-              <div>
-                <p class="meta">{formatDate(post.data.publishDate, 'short')}</p>
-                <h3>
-                  <a href={withBase(`/blog/${post.id}/`)}>{post.data.title}</a>
-                </h3>
-                <p>{post.data.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      ) : (
-        <div class="empty-state compact">
-          <p set:html={t('home.postsEmpty')} />
         </div>
       )
     }

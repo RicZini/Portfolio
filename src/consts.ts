@@ -10,7 +10,7 @@ export const SITE = {
    *  language's strings while keeping their own date format. */
   locale: 'en',
   /** Site name — used in the header brand, <title>, and og:site_name. */
-  title: 'Riccardo Zini | Embedded Electronics & IC Design Engineer',
+  title: 'Riccardo Zini | Analog Electronics & IC Design Engineer',
   /** Default meta description for pages that don't set their own. */
   description: 'A portfolio to showcase my work.',
   /** Description of the RSS feed at /rss.xml. */
@@ -21,7 +21,7 @@ export const SITE = {
    *  Leave empty ('') to omit the author field. */
   author: 'Riccardo Zini',
   /** Footer credit line. */
-  footerText: 'Built with Astro Keel by Riccardo Zini. All rights reserved.',
+  footerText: 'Built from Astro Keel by Riccardo Zini. All rights reserved.',
 } as const;
 
 /** Icons bundled with the theme — see `src/components/SocialLinks.astro`. */
@@ -41,7 +41,7 @@ export const SOCIAL_LINKS: readonly SocialLink[] = [
   { label: 'GitHub', href: 'https://github.com/RicZini', icon: 'github' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/riccardo-zini-9a2b39337', icon: 'linkedin' },
   { label: 'Email', href: 'mailto:riccardo.zini24@gmail.com', icon: 'email' },
-  { label: 'RSS feed', href: '/rss.xml', icon: 'rss' },
+//  { label: 'RSS feed', href: '/rss.xml', icon: 'rss' },
 ];
 
 
@@ -108,7 +108,7 @@ export type NavItem =
  *  `label` instead — one of the two is required. */
 export const NAV_ITEMS: readonly NavItem[] = [
   { href: '/', labelKey: 'nav.home' },
-  { href: '/about/', labelKey: 'nav.about' },
+//  { href: '/about/', labelKey: 'nav.about' },
   { href: '/works/', labelKey: 'nav.works' },
 //  { href: '/blog/', labelKey: 'nav.blog' },
   { href: '/search/', labelKey: 'nav.search' },
