@@ -10,18 +10,18 @@ export const SITE = {
    *  language's strings while keeping their own date format. */
   locale: 'en',
   /** Site name — used in the header brand, <title>, and og:site_name. */
-  title: 'Astro Keel',
+  title: 'Riccardo Zini | Embedded Electronics & IC Design Engineer',
   /** Default meta description for pages that don't set their own. */
-  description: 'A minimal, neutral, and modern portfolio and blog theme for Astro.',
+  description: 'A portfolio to showcase my work.',
   /** Description of the RSS feed at /rss.xml. */
-  rssDescription: 'Notes, essays, and release logs from Astro Keel.',
+  rssDescription: 'University and personal projects, used software, and more.',
   /** Default social share image, relative to the site root (see public/). */
   ogImage: '/og.jpg',
   /** Post author, emitted in JSON-LD BlogPosting structured data.
    *  Leave empty ('') to omit the author field. */
-  author: 'Astro Keel',
+  author: 'Riccardo Zini',
   /** Footer credit line. */
-  footerText: 'Built with Astro Keel.',
+  footerText: 'Built with Astro Keel by Riccardo Zini. All rights reserved.',
 } as const;
 
 /** Icons bundled with the theme — see `src/components/SocialLinks.astro`. */
@@ -38,9 +38,12 @@ export interface SocialLink {
 /** Social profiles rendered as inline SVG icons in the footer.
  *  Add or remove entries here — no template edits needed. */
 export const SOCIAL_LINKS: readonly SocialLink[] = [
-  { label: 'GitHub', href: 'https://github.com/kpab/astro-keel', icon: 'github' },
+  { label: 'GitHub', href: 'https://github.com/RicZini', icon: 'github' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/riccardo-zini-9a2b39337', icon: 'linkedin' },
+  { label: 'Email', href: 'mailto:riccardo.zini24@gmail.com', icon: 'email' },
   { label: 'RSS feed', href: '/rss.xml', icon: 'rss' },
 ];
+
 
 /** Giscus — GitHub Discussions-backed comments on blog posts.
  *  See `GISCUS` below; values come from https://giscus.app. */
@@ -107,6 +110,6 @@ export const NAV_ITEMS: readonly NavItem[] = [
   { href: '/', labelKey: 'nav.home' },
   { href: '/about/', labelKey: 'nav.about' },
   { href: '/works/', labelKey: 'nav.works' },
-  { href: '/blog/', labelKey: 'nav.blog' },
+//  { href: '/blog/', labelKey: 'nav.blog' },
   { href: '/search/', labelKey: 'nav.search' },
 ];
