@@ -34,14 +34,14 @@ const { Content } = await render(entry);
       <div class="action-row">
         {
           entry.data.link && (
-            <a class="button" href={entry.data.link}>
+            <a class="button" href={entry.data.link} target="_blank" rel="noopener noreferrer">
               {t('work.visit')}
             </a>
           )
         }
         {
           entry.data.repo && (
-            <a class="text-link" href={entry.data.repo}>
+            <a class="text-link" href={entry.data.repo} target="_blank" rel="noopener noreferrer">
               {t('work.repository')}
             </a>
           )
@@ -73,3 +73,26 @@ const { Content } = await render(entry);
     </div>
   </article>
 </BaseLayout>
+
+<style>
+  /* 1. Limita la dimensione dell'immagine principale di copertina (thumbnail) */
+  .article-image {
+    max-width: 650px;
+    width: 100%;
+    height: auto;
+    margin: 2rem auto 0 auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  /* 2. Limita la dimensione di qualsiasi immagine inserita nel corpo del testo Markdown (.md) */
+  .prose :global(img) {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 6px;
+  }
+</style>
