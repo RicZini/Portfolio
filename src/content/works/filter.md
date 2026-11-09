@@ -2,7 +2,7 @@
 title: Analog Filter Design
 description: Design, Monte Carlo sensitivity analysis, and bench testing of a 40 kHz active low-pass filter for analog signal conditioning.
 publishDate: 2026-6-15
-tech: ['Analog Design', 'Op-Amps', 'Monte Carlo Analysis', 'Bench Testing']
+tech: ['Analog Electronics', 'Op-Amps', 'Monte Carlo Analysis', 'Bench Testing']
 thumbnail: ./cover-filter.png
 ---
 <br>
