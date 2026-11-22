@@ -45,44 +45,63 @@ if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate()))
 <BaseLayout description={SITE.description}>
   <StructuredData slot="head" schema={websiteSchema} />
   <section class="hero section">
-    <p class="eyebrow">Introduction</p>
-    <h1>From Silicon to Code. Engineered for performance.</h1>
-    <p class="lead">
-      MSc Electronic Engineering student with a solid background spanning analog electronics, RF/MW circuits, IC design and digital architectures.<br>
-      Backed by extensive hands-on experience in Formula Student, bridging complex theoretical models with high-performance, real-world execution.
-    </p>
-    <div class="action-row" aria-label={t('home.primaryLinks')}>
-      <a class="button" href={withBase('/works/')}>{t('home.viewWorks')}</a>
-      <a class="text-link" href={withBase('/CV_Zini_Riccardo.pdf')} target="_blank">My CV</a>
+  <div class="hero-split">
+    <div class="hero-text">
+      <p class="eyebrow">Introduction</p>
+      <h1>From Silicon to Code. Engineered for performance.</h1>
+      <p class="lead">
+        MSc Electronic Engineering student with a solid background spanning analog electronics, RF/MW circuits, IC design and digital architectures.<br>
+        Backed by extensive hands-on experience in Formula Student, bridging complex theoretical models with high-performance, real-world execution.
+      </p>
+      <div class="action-row" aria-label={t('home.primaryLinks')}>
+        <a class="button" href={withBase('/works/')}>{t('home.viewWorks')}</a>
+        <a class="text-link" href={withBase('/CV_Zini_Riccardo.pdf')} target="_blank">My CV</a>
+      </div>
     </div>
-  </section>
+
+    <div class="hero-image-wrapper">
+      <img
+        src={withBase('/hero-pic1.png')}
+        alt="Riccardo Zini"
+        class="cutout-img hero-cutout"
+      />
+    </div>
+  </div>
+</section>
 
   <section class="section prose-grid">
-    <div>
-      <p class="eyebrow">Who am I?</p>
-      <h2>The life of a engineer.</h2>
+  <div>
+    <p class="eyebrow">Who am I?</p>
+    <div class="bio-header-group">
+      <h2>The life of an engineer.</h2>
+      <img
+        src={withBase('/bio-pic-tonda.png')}
+        alt="Riccardo Zini"
+        class="cutout-img bio-cutout"
+      />
     </div>
-    <div class="prose-stack">
-      <p>
-        I am a {age} year old engineer based in <strong>Veneto, Italy</strong>. When I am not designing circuits, you will probably 
-        find me weightlifting, playing basketball, baking traditional Italian desserts, or reading sci-fi and thrillers.
-      </p>
-      <p>
-        My academic journey started in <strong>Automation Engineering</strong>. However, halfway through my BSc, 
-        I realized my true passion wasn't just controlling abstract systems, it was designing the physical
-        electronics and hardware that powers them. 
-        This realization drove my pivot to an MSc in <strong>Electronic Engineering</strong>, where I delved deep into analog and
-        mixed-signal electronics as well as RF/MW circuits and IC design.
-      </p>
-      <p>
-        The most formative chapter of my career has been <strong>UniBo Motorsport</strong>. What began as a deep dive into 
-        technical implementation evolved into my role as Technical Lead. Managing a department of 12 engineers 
-        taught me how to align complex goals with strict deadlines and bridge the gap between theoretical models 
-        and race-ready hardware. Today, I continue to support the team as an <strong>alumno</strong>, mentoring the next
-        generation of engineers on system architecture, PCB and Powertrain design, and ECU development.
-      </p>
-    </div>
-  </section>
+  </div>
+  <div class="prose-stack">
+    <p>
+      I am a {age} year old engineer based in <strong>Veneto, Italy</strong>. When I am not designing circuits, you will probably 
+      find me weightlifting, playing basketball, baking traditional Italian desserts, or reading sci-fi and thrillers.
+    </p>
+    <p>
+      My academic journey started in <strong>Automation Engineering</strong>. However, halfway through my BSc, 
+      I realized my true passion wasn't just controlling abstract systems, it was designing the physical
+      electronics and hardware that powers them. 
+      This realization drove my pivot to an MSc in <strong>Electronic Engineering</strong>, where I delved deep into analog and
+      mixed-signal electronics as well as RF/MW circuits and IC design.
+    </p>
+    <p>
+      The most formative chapter of my career has been <strong>UniBo Motorsport</strong>. What began as a deep dive into 
+      technical implementation evolved into my role as Technical Lead. Managing a department of 12 engineers 
+      taught me how to align complex goals with strict deadlines and bridge the gap between theoretical models 
+      and race-ready hardware. Today, I continue to support the team as an <strong>alumno</strong>, mentoring the next
+      generation of engineers on system architecture, PCB and Powertrain design, and ECU development.
+    </p>
+  </div>
+</section>
 
   <section class="section" aria-label={t('about.ledgerLabel')}>
     <div class="about-ledger">
@@ -172,3 +191,60 @@ if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate()))
     }
   </section>
 </BaseLayout>
+
+<style>
+  .hero-split {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cutout-img {
+    height: auto;
+    display: block;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.14));
+  }
+
+  /* Cambia questo numero (es. 250px, 300px, 340px) per adattare la grandezza */
+  .hero-cutout {
+    max-width: 300px;
+    width: 100%;
+  }
+
+  .bio-header-group {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .bio-cutout {
+    max-width: 220px;
+    width: 100%;
+    margin: 2rem auto 0 auto;
+  }
+
+  @media (max-width: 850px) {
+    .hero-split {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-cutout {
+      max-width: 240px;
+      margin: 1.5rem auto 0 auto;
+    }
+
+    .bio-cutout {
+      max-width: 220px;
+      margin: 1.5rem auto;
+    }
+  }
+</style>
