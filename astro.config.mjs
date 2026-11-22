@@ -12,7 +12,7 @@ export default defineConfig({
   // is the repository name. Drop `base` (or set it to '/') for a custom domain
   // or a `<user>.github.io` root site.
   site: 'https://RicZini.github.io',
-  base: '/Riccardo-Zini-Portfolio/',
+  base: '/Portfolio/',
   integrations: [mdx(), sitemap()],
   markdown: {
     processor: unified({
