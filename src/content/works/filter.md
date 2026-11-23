@@ -7,7 +7,7 @@ thumbnail: ./cover-filter.png
 ---
 <br>
 
-<a href="/Riccardo-Zini-Portfolio/LTGL-LP40-BB_Datasheet.pdf" target="_blank" class="button">Download Full Datasheet (English)</a>
+<a href="/Portfolio/LTGL-LP40-BB_Datasheet.pdf" target="_blank" class="button">Download Full Datasheet (English)</a>
 
 # Brief
 This project served as my first hands-on introduction to analog circuit design and laboratory testing, developed as a collaborative team effort with two fellow engineering students. We split the workload equally across theoretical calculations, simulation, and physical testing, holding regular update meetings to align on design choices and component selection. Our goal was to build a 7th-order active Butterworth low-pass filter with a 40 kHz cutoff frequency and a DC gain of 5.

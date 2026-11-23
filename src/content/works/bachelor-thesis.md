@@ -13,7 +13,7 @@ tech:
 
 <br>
 
-<a href="/Riccardo-Zini-Portfolio/Tesi_finale.pdf" target="_blank" class="button">Download Full Thesis (Italian)</a>
+<a href="/Portfolio/Tesi_finale.pdf" target="_blank" class="button">Download Full Thesis (Italian)</a>
 
 ## Project Scope
 Developed as my Bachelor's thesis, this project focused on optimizing traction and longitudinal stability for a four-wheel-drive electric vehicle with independent wheel motors. To accurately capture multi-wheel dynamic interactions, I developed a custom mathematical vehicle model from first principles rather than relying on pre-built abstractions.

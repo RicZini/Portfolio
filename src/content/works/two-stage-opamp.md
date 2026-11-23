@@ -7,7 +7,7 @@ thumbnail: ./cover-twostage.png
 ---
 <br>
 
-<a href="/Riccardo-Zini-Portfolio/PCSA_Twostage.pdf" target="_blank" class="button">Download Full Datasheet (English)</a>
+<a href="/Portfolio/PCSA_Twostage.pdf" target="_blank" class="button">Download Full Datasheet (English)</a>
 
 # Brief
 Designed individually as part of my Master's coursework in Analog Circuit Design at UniBo, this project served as my introduction to transistor-level integrated circuit (IC) design. Starting from strict electrical specifications, I designed a two-stage CMOS operational amplifier architecture featuring a differential input pair with an active load, a common-source output stage, Miller frequency compensation, and an onboard bias network.
