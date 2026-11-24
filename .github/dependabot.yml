@@ -5,7 +5,7 @@ updates:
     directory: /
     schedule:
       interval: weekly
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 0
     groups:
       # Routine bumps arrive as one reviewable PR; majors stay separate so a
       # breaking change is never buried in a batch.
@@ -21,7 +21,7 @@ updates:
     directory: /
     schedule:
       interval: weekly
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 0
     groups:
       actions:
         patterns:
